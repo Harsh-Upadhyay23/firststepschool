@@ -280,7 +280,7 @@ const Home = () => {
       <div className="absolute bottom-1/4 right-1/3 text-4xl opacity-40 animate-float" style={{ animationDelay: '3.5s' }}>☁️</div>
 
       {/* Hero Section */}
-       <HeroSection/>
+      <HeroSection />
 
       {/* Rainbow Dividers Throughout - Hidden on mobile */}
       <div className="relative z-10 hidden md:block">
@@ -312,27 +312,27 @@ const Home = () => {
               <p className="text-gray-700">To provide a safe, nurturing, and stimulating environment where children can take their first steps toward a lifetime of learning.</p>
             </motion.div>
 
-           <motion.div
-      className="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300"
-      whileHover={{ scale: 1.05 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-    >
-      {/* Cute, meaningful Vision Icon */}
-      <div className="flex justify-center mb-4">
-        <FaStar className="text-yellow-500 text-5xl" />
-      </div>
+            <motion.div
+              className="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              {/* Cute, meaningful Vision Icon */}
+              <div className="flex justify-center mb-4">
+                <FaStar className="text-yellow-500 text-5xl" />
+              </div>
 
-      {/* Title */}
-      <h3 className="text-xl font-bold text-blue-800 mb-2">Our Vision</h3>
+              {/* Title */}
+              <h3 className="text-xl font-bold text-blue-800 mb-2">Our Vision</h3>
 
-      {/* Description */}
-      <p className="text-gray-700">
-        To be the leading preschool that sets the foundation for children to
-        become confident, compassionate, and curious learners.
-      </p>
-    </motion.div>
+              {/* Description */}
+              <p className="text-gray-700">
+                To be the leading preschool that sets the foundation for children to
+                become confident, compassionate, and curious learners.
+              </p>
+            </motion.div>
 
             <motion.div
               className="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:-translate-y-2 transition-all duration-300"
@@ -382,47 +382,47 @@ const Home = () => {
       </section>
 
       {/* Daily Schedule Section */}
-   <section className="relative z-10 py-16 bg-gradient-to-br from-green-50 to-blue-50">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-blue-800 mb-4">A Day at First Step 📅</h2>
-      <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto mb-6"></div>
-      <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-        Our daily schedule is designed to balance structured learning with creative play.
-      </p>
-    </div>
+      <section className="relative z-10 py-16 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-blue-800 mb-4">A Day at First Step 📅</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Our daily schedule is designed to balance structured learning with creative play.
+            </p>
+          </div>
 
-    <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6">
-      <div className="grid gap-4">
-        {dailyActivities.map((activity, index) => (
-          <motion.div
-            key={index}
-            className="flex items-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow-sm"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,   // ⚡ High stiffness = snappy
-              damping: 25,      // 🔥 Lower damping = fast stop
-              delay: index * 0.07
-            }}
-            whileHover={{
-              x: 6,
-              scale: 1.05,
-              transition: { type: "spring", stiffness: 500, damping: 18 }
-            }}
-          >
-            <div className="text-3xl mr-4">{activity.icon}</div>
-            <div className="flex-1">
-              <h3 className="font-bold text-blue-800">{activity.time}</h3>
-              <p className="text-gray-700">{activity.activity}</p>
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6">
+            <div className="grid gap-4">
+              {dailyActivities.map((activity, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow-sm"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,   // ⚡ High stiffness = snappy
+                    damping: 25,      // 🔥 Lower damping = fast stop
+                    delay: index * 0.07
+                  }}
+                  whileHover={{
+                    x: 6,
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 500, damping: 18 }
+                  }}
+                >
+                  <div className="text-3xl mr-4">{activity.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-blue-800">{activity.time}</h3>
+                    <p className="text-gray-700">{activity.activity}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -473,11 +473,11 @@ const Home = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src={`/public/gallery/image${item}.jpg`}  // images: img1.jpg → img4.jpg
+                  src={`/gallery/image${item}.jpg`}   // ✅ remove /public
                   alt={`Gallery ${item}`}
                   className="w-full h-full object-cover"
-
                 />
+
               </motion.div>
             ))}
           </div>
@@ -501,9 +501,9 @@ const Home = () => {
         <div className="h-2 bg-gradient-to-r from-purple-500 via-pink-500 via-red-500 via-orange-500 via-yellow-500 via-green-500 to-blue-500"></div>
         <div className="h-4 bg-gradient-to-r from-blue-500 via-indigo-500 via-purple-500 via-pink-500 via-red-500 via-orange-500 to-yellow-500 animate-pulse"></div>
       </div>
-{/* Contact & Location */}
+      {/* Contact & Location */}
 
-<ContactSection/>
+      <ContactSection />
 
 
 
