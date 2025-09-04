@@ -144,9 +144,9 @@ const ActivitiesPage = () => {
           <div className="inline-block mb-3 md:mb-4 text-xs md:text-sm px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-full font-medium shadow-lg">
             Daily Activities
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight py-1">
             Learning Through 
-            <span className="block mt-1 md:mt-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="block mt-1 md:mt-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent py-2">
               Play & Discovery
             </span>
           </h2>

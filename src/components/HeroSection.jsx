@@ -173,7 +173,7 @@ const HeroSection = () => {
                 }}
                 style={{ backgroundSize: '200% auto' }}
               >
-                A Magical World of Learning & Fun
+                <div>A Magical World of Learning & Fun</div>
                 <motion.span
                   animate={{ rotate: [0, 15, 0, -15, 0] }}
                   transition={{ repeat: Infinity, duration: 3 }}

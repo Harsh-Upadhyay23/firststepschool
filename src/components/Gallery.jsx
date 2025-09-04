@@ -124,7 +124,7 @@ const Gallery = () => {
       <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Header with enhanced animations */}
         <div className="text-center mb-16 animate-slide-in-from-top">
-          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 mb-6 animate-gradient-x">
+          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 mb-6 animate-gradient-x py-3">
             Our Magical Moments 
             <Sparkles className="inline-block animate-sparkle ml-3 text-purple-600" size={48} />
           </h1>

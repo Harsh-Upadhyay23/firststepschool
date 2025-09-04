@@ -234,7 +234,7 @@ const Contact = () => {
             className="text-4xl md:text-6xl font-bold mb-6 text-blue-800"
           >
             Ready to Begin Your Child's
-            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Amazing Journey?</span>
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 py-2.5">Amazing Journey?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
