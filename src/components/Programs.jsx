@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Clock, Users, BookOpen, Palette, Music, Globe, Sparkles } from "lucide-react";
+import SwingingBoy from "./SwingingBoy";
 
 const Programs = () => {
+ 
   const programs = [
     {
       title: "Play Group",
@@ -84,6 +86,7 @@ const Programs = () => {
   ];
 
   return (
+    
     <section id="programs" className="py-20 bg-gradient-to-b from-pink-50 via-yellow-50 to-purple-50 relative overflow-hidden">
       {/* Floating sparkles */}
       <motion.div 
@@ -93,6 +96,12 @@ const Programs = () => {
       >
         ✨
       </motion.div>
+     <div className="-top-4 left-0 absolute z-50 md:z-10">
+  <SwingingBoy className="w-28 md:w-40" />
+</div>
+
+
+    
       <motion.div 
         className="absolute bottom-10 right-10 text-pink-400 text-3xl"
         animate={{ rotate: [0, 20, 0, -20, 0] }}
