@@ -402,7 +402,7 @@ const Contact = () => {
               WhatsApp Us
             </motion.a>
             <motion.a
-              href="https://maps.app.goo.gl/DscDokpSet8vy5CWA"
+              href="https://maps.app.goo.gl/Gv4i9vHjt3k2VNfy9"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
