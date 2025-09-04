@@ -8,7 +8,7 @@ const Footer = () => {
         
         <p className="text-lg font-semibold flex flex-wrap items-center justify-center gap-2">
           © 2025 First Step Pre Primary English School. Made with 
-          <Heart className="w-5 h-5 text-red-200 animate-pulse" fill="currentColor" />
+          <Heart className="w-5 h-5 text-red-200 animate-pulse" fill="red" />
           for little dreamers.
         </p>
 
