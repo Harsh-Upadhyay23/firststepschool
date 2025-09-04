@@ -473,7 +473,7 @@ const Home = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src={`/public/gallery/image${item}.jpg`}  // images: img1.jpg → img4.jpg
+                  src={`/gallery/image${item}.jpg`}  // images: img1.jpg → img4.jpg
                   alt={`Gallery ${item}`}
                   className="w-full h-full object-cover"
 
