@@ -96,9 +96,10 @@ const Programs = () => {
       >
         ✨
       </motion.div>
-     <div className="-top-4 left-0 absolute z-50 md:z-10">
+   <div className="fixed top-15 left-0 z-50">
   <SwingingBoy className="w-28 md:w-40" />
 </div>
+
 
 
     

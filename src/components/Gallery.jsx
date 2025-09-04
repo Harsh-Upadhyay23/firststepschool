@@ -5,23 +5,47 @@ const Gallery = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRefs = useRef([]);
 
-  // Sample media data
-  const galleryMedia = [
-    { type: 'image', src: '/gallery/image1.jpg', caption: 'Art & Craft Time! 🎨' },
-    { type: 'image', src: '/gallery/image2.jpg', caption: 'Story Time Adventures 📚' },
-    { type: 'image', src: '/gallery/image3.jpg', caption: 'Playground Fun! 🎪' },
-    { type: 'image', src: '/gallery/image4.jpg', caption: 'Learning Through Play 🧩' },
-    { type: 'image', src: '/gallery/image5.jpg', caption: 'Music & Dance 🎵' },
-    { type: 'image', src: '/gallery/image6.jpg', caption: 'Outdoor Activities 🌳' },
-    { type: 'video', src: '/gallery/video1.mp4', caption: 'Daily Activities Video 🎬' },
-    { type: 'video', src: '/gallery/video2.mp4', caption: 'Sports Day Highlights ⚽' },
-    { type: 'image', src: '/gallery/image7.jpg', caption: 'Science Experiments 🔬' },
-    { type: 'image', src: '/gallery/image8.jpg', caption: 'Birthday Celebrations 🎂' },
-    { type: 'image', src: '/gallery/image9.jpg', caption: 'Cultural Programs 🎭' },
-    { type: 'image', src: '/gallery/image10.jpg', caption: 'Annual Day Performance 🌟' },
-  ];
+  // Sample media data - 18 images and 6 videos
+const galleryMedia = [
+  // Independence Day 🇮🇳
+  { type: 'image', src: '/gallery/image1.jpg', caption: 'Little Patriots in Action 🇮🇳✨' },
+  { type: 'image', src: '/gallery/image5.jpg', caption: 'Proud to be Indian ❤️🤍💚' },
+  { type: 'image', src: '/gallery/image7.jpg', caption: 'Freedom in Little Hands 🕊️' },
+  { type: 'image', src: '/gallery/image8.jpg', caption: 'Colors of Independence 🌟' },
+  { type: 'image', src: '/gallery/image10.jpg', caption: 'Independence Day Parade🎉🇮🇳' },
+  { type: 'image', src: '/gallery/image11.jpg', caption: 'Saluting the Nation 🙌' },
+  { type: 'image', src: '/gallery/image12.jpg', caption: 'Vande Mataram Spirit ❤️' },
+
+  { type: 'video', src: '/gallery/video1.mp4', caption: 'Independence Day Celebrations 🎊🇮🇳' },
+  { type: 'video', src: '/gallery/video2.mp4', caption: 'Tiny Feet, Big Moves 💃✨ ' },
+  { type: 'video', src: '/gallery/video3.mp4', caption: 'Little Soldiers on Stage 👮‍♂️' },
+
+  // Krishna Janmashtami 🦚
+  { type: 'image', src: '/gallery/image4.jpg', caption: 'Our Little Krishna 💛🦚' },
+  { type: 'image', src: '/gallery/image6.jpg', caption: 'Bal Gopal’s Charm ✨' },
+  { type: 'image', src: '/gallery/image9.jpg', caption: 'Radhe Radhe 🙏💫 — with our little Kanha' },
+  { type: 'image', src: '/gallery/image3.jpg', caption: 'Little Freedom Fighters, Big Patriotism 🇮🇳✨' },
+
+  // Dahi Handi 🥛
+  { type: 'image', src: '/gallery/image2.jpg', caption: 'Dahi Handi Fun 🥳🥛' },
+
+  // Raksha Bandhan ❤️
+  { type: 'image', src: '/gallery/image13.jpg', caption: 'A thread of love, protection & happiness 🧵❤️' },
+  { type: 'image', src: '/gallery/image14.jpg', caption: 'Raksha Bandhan Smiles 😊' },
+  { type: 'image', src: '/gallery/image15.jpg', caption: 'Rakhi & Chocolates 🍫❤️' },
+  { type: 'image', src: '/gallery/image16.jpg', caption: 'Little Brother-Sister Love 💕' },
+  { type: 'image', src: '/gallery/image17.jpg', caption: 'Tying the Knot of Protection 🧵' },
+  { type: 'image', src: '/gallery/image18.jpg', caption: 'Sweet Moments of Rakhi 🎀' },
+
+  // Raksha Bandhan & Janmashtami Mixed Celebration
+  { type: 'video', src: '/gallery/video4.mp4', caption: 'Johny Johny… Yes Papa 🎶' },
+  { type: 'video', src: '/gallery/video5.mp4', caption: 'Cutie on Stage 🎤❤️' },
+  { type: 'video', src: '/gallery/video6.mp4', caption: 'Singing on stage with full energy 🎤' }
+];
+
 
   // Autoplay videos when page loads
   useEffect(() => {
@@ -41,11 +65,13 @@ const Gallery = () => {
     setSelectedMedia(media);
     setCurrentIndex(index);
     setIsPlaying(false);
+    setIsMuted(true);
   };
 
   const closeModal = () => {
     setSelectedMedia(null);
     setIsPlaying(false);
+    setIsMuted(true);
   };
 
   const nextMedia = () => {
@@ -53,6 +79,7 @@ const Gallery = () => {
     setCurrentIndex(nextIndex);
     setSelectedMedia(galleryMedia[nextIndex]);
     setIsPlaying(false);
+    setIsMuted(true);
   };
 
   const prevMedia = () => {
@@ -60,6 +87,7 @@ const Gallery = () => {
     setCurrentIndex(prevIndex);
     setSelectedMedia(galleryMedia[prevIndex]);
     setIsPlaying(false);
+    setIsMuted(true);
   };
 
   // Function to handle video play in modal
@@ -73,6 +101,17 @@ const Gallery = () => {
           video.play();
         }
         setIsPlaying(!isPlaying);
+      }
+    }
+  };
+
+  // Function to toggle mute/unmute
+  const toggleMute = () => {
+    if (selectedMedia.type === 'video') {
+      const video = document.querySelector('.modal-video');
+      if (video) {
+        video.muted = !video.muted;
+        setIsMuted(!isMuted);
       }
     }
   };
@@ -221,7 +260,7 @@ const Gallery = () => {
 
       {/* Modal */}
       {selectedMedia && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-modal-appear">
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-modal-appear mt-4">
           <div className="relative max-w-4xl max-h-full w-full animate-modal-scale">
             {/* Media content */}
             <div className="bg-white rounded-3xl overflow-hidden shadow-2xl relative animate-glow-subtle">
@@ -259,11 +298,20 @@ const Gallery = () => {
                   <video
                     src={selectedMedia.src}
                     className="w-full max-h-[70vh] object-contain modal-video"
-                    muted={true}
+                    muted={isMuted}
                     autoPlay
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                   />
+                  
+                  {/* Mute/Unmute button */}
+                  <button
+                    onClick={toggleMute}
+                    className="absolute bottom-4 left-4 z-50 bg-black/70 text-white hover:bg-black/90 transition-all duration-300 rounded-full p-2 hover:scale-110"
+                  >
+                    {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+                  </button>
+                  
                   {!isPlaying && (
                     <div 
                       className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer"
