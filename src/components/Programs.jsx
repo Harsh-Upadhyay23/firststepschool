@@ -127,7 +127,7 @@ const Programs = () => {
           </motion.span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Age-Appropriate 
-            <span className="block bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 text-transparent bg-clip-text mt-2">
+            <span className="block bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 text-transparent bg-clip-text mt-2 py-2">
               Learning Programs ✨
             </span>
           </h2>
