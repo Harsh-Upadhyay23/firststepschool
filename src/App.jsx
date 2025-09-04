@@ -10,6 +10,7 @@ import Programs from "./components/Programs"
 import Gallery from "./components/Gallery";
 import ScrollUp from "./components/ScrollUp";
 import ActivitiesPage from "./components/ActivitiesPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
              <Route path="/activities" element={<ActivitiesPage />} />
         </Routes>
       </div>
+      <Footer/>
     </Router>
   );
 }

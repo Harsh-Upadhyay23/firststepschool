@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react"; 
 
 const Contact = () => {
   const [butterflies, setButterflies] = useState([]);
@@ -42,7 +43,7 @@ const Contact = () => {
       }));
       setStars(newStars);
     };
-    
+
     const generateClouds = () => {
       const newClouds = Array.from({ length: 15 }, (_, i) => ({
         id: i,
@@ -55,7 +56,7 @@ const Contact = () => {
       }));
       setClouds(newClouds);
     };
-    
+
     generateButterflies();
     generateBubbles();
     generateStars();
@@ -185,7 +186,7 @@ const Contact = () => {
       {stars.map((star) => (
         <TwinkleStar key={star.id} {...star} />
       ))}
-      
+
       {clouds.map((cloud) => (
         <FloatingCloud key={cloud.id} {...cloud} />
       ))}
@@ -212,13 +213,13 @@ const Contact = () => {
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <motion.div 
+          <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -226,7 +227,7 @@ const Contact = () => {
           >
             Get In Touch
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -235,13 +236,13 @@ const Contact = () => {
             Ready to Begin Your Child's
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Amazing Journey?</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg text-gray-700 max-w-3xl mx-auto"
           >
-            We'd love to meet you and your little one! Visit us to see our facilities 
+            We'd love to meet you and your little one! Visit us to see our facilities
             and learn how First Step can nurture your child's growth and development.
           </motion.p>
         </motion.div>
@@ -257,13 +258,13 @@ const Contact = () => {
               whileHover={{ scale: 1.05, rotate: 2 }}
               className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
             >
-              <motion.div 
-                animate={{ 
+              <motion.div
+                animate={{
                   scale: [1, 1.1, 1],
                   rotate: [0, 5, -5, 0]
                 }}
-                transition={{ 
-                  duration: 2, 
+                transition={{
+                  duration: 2,
                   repeat: Infinity,
                   repeatDelay: 3
                 }}
@@ -274,7 +275,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-center text-blue-800 mb-4">{info.title}</h3>
               <div className="space-y-2">
                 {info.details.map((detail, i) => (
-                  <motion.p 
+                  <motion.p
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -289,82 +290,82 @@ const Contact = () => {
           ))}
         </div>
 
-       
-    
+
+
 
         {/* FAQ Section */}
-   <motion.div 
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.6 }}
-  className="mb-16"
->
-  <h3 className="text-3xl font-bold text-center text-blue-800 mb-2">
-    Frequently Asked Questions
-  </h3>
-  <p className="text-center text-gray-700 mb-8">
-    Quick answers to common parent questions
-  </p>
-  
-  <div className="grid md:grid-cols-2 gap-6">
-    {[
-      {
-        question: "What teaching methods do you follow?",
-        answer: "We follow play-based and activity-driven learning, focusing on creativity, social skills, and overall development."
-      },
-      {
-        question: "Do you organize events or celebrations?",
-        answer: "Yes, we celebrate festivals, birthdays, and cultural events to encourage social bonding and learning."
-      },
-      {
-        question: "Is there a uniform?",
-        answer: "Yes, children are required to wear the school uniform for regular classes and events."
-      },
-      {
-        question: "How can parents communicate with teachers?",
-        answer: "Parents can connect with teachers during scheduled meetings or by prior appointment. Updates are also shared through phone and messages."
-      }
-    ].map((faq, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 + (index * 0.1) }}
-        whileHover={{ scale: 1.02 }}
-        className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-      >
-        <h4 className="text-xl font-bold text-blue-800 mb-3 flex items-center">
-          <motion.span
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
-            className="mr-3 text-2xl"
-          >
-            ❓
-          </motion.span>
-          {faq.question}
-        </h4>
-        <p className="text-gray-700">{faq.answer}</p>
-      </motion.div>
-    ))}
-  </div>
-</motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-16"
+        >
+          <h3 className="text-3xl font-bold text-center text-blue-800 mb-2">
+            Frequently Asked Questions
+          </h3>
+          <p className="text-center text-gray-700 mb-8">
+            Quick answers to common parent questions
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                question: "What teaching methods do you follow?",
+                answer: "We follow play-based and activity-driven learning, focusing on creativity, social skills, and overall development."
+              },
+              {
+                question: "Do you organize events or celebrations?",
+                answer: "Yes, we celebrate festivals, birthdays, and cultural events to encourage social bonding and learning."
+              },
+              {
+                question: "Is there a uniform?",
+                answer: "Yes, children are required to wear the school uniform for regular classes and events."
+              },
+              {
+                question: "How can parents communicate with teachers?",
+                answer: "Parents can connect with teachers during scheduled meetings or by prior appointment. Updates are also shared through phone and messages."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 + (index * 0.1) }}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <h4 className="text-xl font-bold text-blue-800 mb-3 flex items-center">
+                  <motion.span
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
+                    className="mr-3 text-2xl"
+                  >
+                    ❓
+                  </motion.span>
+                  {faq.question}
+                </h4>
+                <p className="text-gray-700">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
 
 
         {/* Call to Action */}
-         {/* Call to Action */}
-        <motion.div 
+        {/* Call to Action */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 rounded-2xl p-8 max-w-4xl mx-auto"
         >
-          <motion.div 
-            animate={{ 
+          <motion.div
+            animate={{
               scale: [1, 1.1, 1],
             }}
-            transition={{ 
-              duration: 3, 
+            transition={{
+              duration: 3,
               repeat: Infinity,
             }}
             className="text-5xl mb-6"
@@ -375,10 +376,10 @@ const Contact = () => {
             Join the First Step Family Today!
           </h3>
           <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-            Give your child the best start in life. Our caring team is ready to welcome you both 
+            Give your child the best start in life. Our caring team is ready to welcome you both
             into our nurturing learning community.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
               href="tel:+917387581257"
@@ -390,14 +391,14 @@ const Contact = () => {
               Call Now
             </motion.a>
             <motion.a
-              href="https://wa.me/917387581257"
+              href="https://wa.me/917387581257?text=Hello%20I%20am%20interested%20in%20admission%20query."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-green-500 to-teal-500 text-white py-4 px-8 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
             >
-              <span className="mr-2">💬</span>
+              <MessageCircle className="mr-2 w-6 h-6" />
               WhatsApp Us
             </motion.a>
             <motion.a
