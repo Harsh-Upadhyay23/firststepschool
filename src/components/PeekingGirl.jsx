@@ -5,25 +5,23 @@ export default function PeekingGirl() {
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
-    let timeout;
-
-    // Hide on scroll
+    // Hide on scroll (only while scrolling)
+    let scrollTimer;
     const handleScroll = () => {
       setIsHidden(true);
-      clearTimeout(timeout);
-      timeout = setTimeout(() => setIsHidden(false), 2000); // 2s baad wapas
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => setIsHidden(false), 100); // jese hi scroll rukta hai turant bahar
     };
 
-    // Hide on cursor near girl
+    // Hide on cursor near girl (only while cursor is close)
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       const screenHeight = window.innerHeight;
 
-      // Agar cursor left bottom corner ke paas hai (0-200px X, bottom 200px Y)
       if (clientX < 200 && clientY > screenHeight - 200) {
-        setIsHidden(true);
-        clearTimeout(timeout);
-        timeout = setTimeout(() => setIsHidden(false), 2000);
+        setIsHidden(true); // cursor paas → hide
+      } else {
+        setIsHidden(false); // cursor dur → turant show
       }
     };
 
@@ -41,11 +39,11 @@ export default function PeekingGirl() {
       <style>{`
         .peek-show {
           transform: translateX(-35%); /* bahar face+hand */
-          transition: transform 0.25s ease-in-out; /* Fast show */
+          transition: transform 0.25s ease-in-out;
         }
         .peek-hide {
           transform: translateX(-65%); /* andar chhupi */
-          transition: transform 0.25s ease-in-out; /* Fast hide */
+          transition: transform 0.25s ease-in-out;
         }
       `}</style>
 
@@ -57,7 +55,7 @@ export default function PeekingGirl() {
         aria-hidden="true"
       >
         <img
-          src="/home/girl.webp"  // Public folder path
+          src="/home/girl.webp"
           alt="Peeking Girl"
           className={`
             block
