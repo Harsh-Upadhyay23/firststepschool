@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PeekingGirl from './PeekingGirl';
 import { 
   Palette, 
   Music, 
@@ -138,7 +139,7 @@ const ActivitiesPage = () => {
   return (
     <section id="activities" className="py-8 md:py-16 bg-gradient-to-br from-blue-50 via-pink-50 to-purple-50 min-h-screen">
       <div className="container mx-auto px-4 max-w-6xl">
-        
+        <PeekingGirl/>
         {/* Header with animation */}
         <div className={`text-center mb-10 md:mb-14 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-block mb-3 md:mb-4 text-xs md:text-sm px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-full font-medium shadow-lg">
