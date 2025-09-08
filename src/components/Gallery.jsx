@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Play, Pause, Volume2, VolumeX, ChevronLeft, ChevronRight, Sparkles, Star } from 'lucide-react';
+import  ButterflyFollower from './fly'
 
 const Gallery = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -119,6 +120,7 @@ const galleryMedia = [
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-200 via-purple-200 via-blue-200 to-yellow-200 relative overflow-hidden">
       {/* Floating geometric shapes background */}
+         <div className='z-50'>  < ButterflyFollower/></div>
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
           <div
