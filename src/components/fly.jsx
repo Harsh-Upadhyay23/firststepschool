@@ -133,7 +133,7 @@ const ButterflyFollower = () => {
   const springX = useSpring(mouseX, springConfig);
   const springY = useSpring(mouseY, springConfig);
 
-  // Floating offset (desktop only)
+  // Floating offset (butterfly always stays a bit away from cursor)
   const butterflyX = useTransform(
     springX,
     (value) => value + Math.sin(Date.now() * 0.001) * 30 + 40
@@ -190,20 +190,19 @@ const ButterflyFollower = () => {
     };
   }, [mousePosition, mouseX, mouseY, isMobile]);
 
-  // 📱 Mobile: continuous random flying
+  // 📱 Mobile: random flying animation
   const [mobilePos, setMobilePos] = useState({ x: 100, y: 100 });
 
   useEffect(() => {
     if (!isMobile) return;
 
-    setIsVisible(true); // always visible on mobile
-
     const interval = setInterval(() => {
-      const newX = Math.random() * (window.innerWidth - 120);
-      const newY = Math.random() * (window.innerHeight - 120);
+      const newX = Math.random() * window.innerWidth * 0.8;
+      const newY = Math.random() * window.innerHeight * 0.8;
       setMobilePos({ x: newX, y: newY });
       setRotation(Math.random() * 360); // Random rotation
-    }, 2500); // every 2.5s
+      setIsVisible(true);
+    }, 2500); // Every 2.5 seconds it changes position
 
     return () => clearInterval(interval);
   }, [isMobile]);
@@ -239,7 +238,7 @@ const ButterflyFollower = () => {
         }}
       >
         <motion.img
-          src="/home/fly.gif"
+          src="/home/fly.gif" // ✅ put fly.gif inside public/home/
           alt="butterfly"
           className="w-full h-full object-contain z-50"
           animate={{
